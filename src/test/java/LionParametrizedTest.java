@@ -8,7 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
-
 public class LionParametrizedTest {
     private final String sex;
     boolean expected;

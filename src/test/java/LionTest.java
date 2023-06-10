@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -49,6 +50,17 @@ public class LionTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testDoesHaveManeException() {
+        Exception exception = assertThrows(Exception.class, () -> {
+            Lion lion = new Lion("тряу", feline);
+            lion.doesHaveMane();
+        });
+        String expected = "Используйте допустимые значения пола животного - самец или самка";
+        String actual = exception.getMessage();
+        assertEquals(expected, actual);
 
+
+    }
 }
 
